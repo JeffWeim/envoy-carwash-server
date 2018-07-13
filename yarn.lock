@@ -831,10 +831,6 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv-json@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv-json/-/dotenv-json-1.0.0.tgz#fc7f672aafea04bed33818733b9f94662332815c"
-
 dotenv@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.0.0.tgz#24e37c041741c5f4b25324958ebbc34bca965935"
