@@ -1,4 +1,4 @@
-require('dotenv-json')()
+// require('dotenv-json')()
 require('dotenv').config()
 const admin = require('firebase-admin')
 const express = require('express')
