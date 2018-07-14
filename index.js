@@ -14,14 +14,12 @@ admin.initializeApp({
   databaseURL: 'https://envoy-carwash.firebaseio.com'
 })
 
+let corsOptions = {
+  origin: 'http://example.com'
+}
+
 app = express()
-// app.use('*', cors())
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://envoycarwash.netlify.com')
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
-  next()
-})
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
 const port = process.env.PORT || 4000
@@ -51,5 +49,5 @@ app.listen(port, function(err) {
     console.log(err)
   }
 
-  console.log('listening in http://localhost:' + port)
+  console.log('listening in on port: ' + port)
 })
