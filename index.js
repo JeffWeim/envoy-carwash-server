@@ -1,4 +1,3 @@
-// require('dotenv-json')()
 require('dotenv').config()
 const admin = require('firebase-admin')
 const express = require('express')
@@ -16,7 +15,13 @@ admin.initializeApp({
 })
 
 app = express()
-app.use('*', cors())
+// app.use('*', cors())
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', CLIENT_ORIGIN)
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
+  next()
+})
 app.use(bodyParser.json())
 
 const port = process.env.PORT || 4000
