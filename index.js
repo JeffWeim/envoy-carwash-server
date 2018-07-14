@@ -16,7 +16,7 @@ admin.initializeApp({
 })
 
 app = express()
-app.use(cors())
+app.use('*', cors())
 app.use(bodyParser.json())
 
 const port = process.env.PORT || 4000
