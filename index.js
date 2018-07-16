@@ -14,12 +14,8 @@ admin.initializeApp({
   databaseURL: 'https://envoy-carwash.firebaseio.com'
 })
 
-let corsOptions = {
-  origin: 'http://example.com'
-}
-
 app = express()
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(bodyParser.json())
 
 const port = process.env.PORT || 4000
