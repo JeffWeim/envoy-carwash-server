@@ -34,6 +34,7 @@ app.post('/setCustomClaims', (req, res) => {
       })
     })
     .catch(error => {
+      console.error(error)
       res.json({
         success: false
       })
